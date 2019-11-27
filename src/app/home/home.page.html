@@ -1,14 +1,43 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Ionic Blank
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  
+  <h1 align="center">Deteccion de logos</h1>
+  
+<ion-button expand="full"><input (change)="readDataUrl($event)"
+  #fileInput
+  type="file"
+  id="fileInput"
+  name="file"
+  
+/></ion-button>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Imagen Cargada</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    
+    <canvas #canvasInput id="canvasInput" style="max-width: 100%;height: auto;width: auto;"></canvas>
+
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card>
+  
+    <canvas #canvasOutput id="canvasOutput" style="max-width: 100%;height: auto;width: auto;"></canvas>
+  
+</ion-card>
+<ion-progress-bar color="primary" [value]="porcentaje"></ion-progress-bar>
+  <ion-button expand="full" id="tryIt" (click)="detectLogo()" >Detectar</ion-button>
+
+
+
 </ion-content>

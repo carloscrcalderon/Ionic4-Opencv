@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+
 
 import { HomePage } from './home.page';
 
@@ -16,7 +18,8 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    NgxIonicImageViewerModule
   ],
   declarations: [HomePage]
 })
