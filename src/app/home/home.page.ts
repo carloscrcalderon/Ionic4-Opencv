@@ -217,8 +217,7 @@ export class HomePage implements AfterViewInit, OnInit {
       console.log("Entra al for de mobil");
       const point1 = new cv.Point(mobil.get(i).x, mobil.get(i).y);
       const point2 = new cv.Point(mobil.get(i).x + mobil.get(i).width, mobil.get(i).y + mobil.get(i).height);
-      console.log(point2);
-      console.log(point1);
+      
 
       cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
       cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [0, 255, 0, 255]);
@@ -231,8 +230,7 @@ export class HomePage implements AfterViewInit, OnInit {
       console.log("Entra al for de macy");
       const point1 = new cv.Point(macy.get(i).x, macy.get(i).y);
       const point2 = new cv.Point(macy.get(i).x + macy.get(i).width, macy.get(i).y + macy.get(i).height);
-      console.log(point2);
-      console.log(point1);
+     
       cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
       cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
     }
@@ -243,7 +241,7 @@ export class HomePage implements AfterViewInit, OnInit {
       console.log("Entra al for de cocacola");
       const point1 = new cv.Point(cocacola.get(i).x, cocacola.get(i).y);
       const point2 = new cv.Point(cocacola.get(i).x + cocacola.get(i).width, cocacola.get(i).y + cocacola.get(i).height);
-      if (cocacola.size() > 1) {
+      if (cocacola.size() > 3) {
         console.log("No")
       } else {
         cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
@@ -256,8 +254,7 @@ export class HomePage implements AfterViewInit, OnInit {
         console.log("Entra al for de walmart");
         const point1 = new cv.Point(walmart.get(i).x, walmart.get(i).y);
         const point2 = new cv.Point(walmart.get(i).x + walmart.get(i).width, walmart.get(i).y + walmart.get(i).height);
-        console.log(point2);
-        console.log(point1);
+        
         cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
         cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
       }
@@ -268,8 +265,7 @@ export class HomePage implements AfterViewInit, OnInit {
         console.log("Entra al for de att");
         const point1 = new cv.Point(att.get(i).x, att.get(i).y);
         const point2 = new cv.Point(att.get(i).x + att.get(i).width, att.get(i).y + att.get(i).height);
-        console.log(point2);
-        console.log(point1);
+        
         cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
         cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
       }
@@ -280,8 +276,39 @@ export class HomePage implements AfterViewInit, OnInit {
         console.log("Entra al for de chase");
         const point1 = new cv.Point(chase.get(i).x, chase.get(i).y);
         const point2 = new cv.Point(chase.get(i).x + chase.get(i).width, chase.get(i).y + chase.get(i).height);
-        console.log(point2);
-        console.log(point1);
+       
+        cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
+        cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
+      }
+      nikeCascade.detectMultiScale(gray, nike, 1.4, 4, 1, msize, msize);
+      for (let i = 0; i < nike.size(); ++i) {
+        var name = "nike";
+        console.log("Entra al for de chase");
+        const point1 = new cv.Point(nike.get(i).x, nike.get(i).y);
+        const point2 = new cv.Point(nike.get(i).x + nike.get(i).width, nike.get(i).y + nike.get(i).height);
+        
+        cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
+        cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
+      }
+
+      bananaCascade.detectMultiScale(gray, banana, 1.7, 6, 1, msize, msize);
+      for (let i = 0; i < banana.size(); ++i) {
+        var name = "banana";
+        console.log("Entra al for de chase");
+        const point1 = new cv.Point(banana.get(i).x, banana.get(i).y);
+        const point2 = new cv.Point(banana.get(i).x + banana.get(i).width, banana.get(i).y + banana.get(i).height);
+        
+        cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
+        cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
+      }
+
+      subwayCascade.detectMultiScale(gray, subway, 1.4, 4, 1, msize, msize);
+      for (let i = 0; i < subway.size(); ++i) {
+        var name = "Subway";
+        console.log("Entra al for de chase");
+        const point1 = new cv.Point(subway.get(i).x, subway.get(i).y);
+        const point2 = new cv.Point(subway.get(i).x + subway.get(i).width, subway.get(i).y + subway.get(i).height);
+        
         cv.rectangle(src, point1, point2, [255, 0, 0, 255]);
         cv.putText(src, name, { x: point1.x, y: point2.y }, cv.FONT_HERSHEY_SIMPLEX, 1.0, [255, 0, 0, 255]);
       }
